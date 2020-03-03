@@ -1,0 +1,29 @@
+{
+    "name": "bgaze/laravel-blade-indenter",
+    "description": "A basic indenter for Laravel 5.8+ Blade templates",
+    "require": {
+        "laravel/framework": ">=5.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bgaze",
+            "email": "benjamin@bgaze.fr"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bgaze\\BladeIndenter\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Bgaze\\BladeIndenter\\": "src"
+        }
+    }
+}
