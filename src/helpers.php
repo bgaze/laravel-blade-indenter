@@ -28,7 +28,7 @@ if (!function_exists('indent_blade_file')) {
      */
     function indent_blade_file($path, $write = true)
     {
-        $string = indent_blade_string(file_get_contents($path));
+        $string = indent_blade_file(file_get_contents($path));
 
         if ($write) {
             file_put_contents($path, $string);
