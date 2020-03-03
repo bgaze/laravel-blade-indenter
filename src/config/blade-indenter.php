@@ -4,6 +4,16 @@ return [
 
     /*
     |---------------------------------------------------------------------------
+    | Indent size
+    |---------------------------------------------------------------------------
+    |
+    | The number of spaces in an indent level
+    |
+    */
+    'indent_size' => 4,
+
+    /*
+    |---------------------------------------------------------------------------
     | HTML self closing tags
     |---------------------------------------------------------------------------
     |
@@ -12,7 +22,7 @@ return [
     */
     'self_closing_tags' => [
         'area', 'base', 'br', 'col', 'embed', 'hr', 'img',
-        'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'
+        'input', 'link', 'meta', 'param', 'source', 'track', 'wbr',
     ],
 
     /*
@@ -46,13 +56,13 @@ return [
     | Examples:
     |
     | 'closing_directives' => [
-    |     'opening_directive_1' => 'closing_directive_1'
-    |     'opening_directive_2' => ['closing_directive_21', 'closing_directive_22']
+    |     'section' => 'show',
+    |     'opening_directive_2' => ['closing_directive_21', 'closing_directive_22'],
     | ],
     |
     */
     'closing_directives' => [
-        'section' => 'show'
+        'section' => 'show',
     ],
 
     /*
@@ -60,12 +70,12 @@ return [
     | Blade "else" directives
     |---------------------------------------------------------------------------
     |
-    | "Else" directive will be placed indented one level down, but previous indent
+    | "Else" directive will be indented one level down, but previous indent
     | level will be preserved on following line.
     |
     */
     'else_directives' => [
-        'empty', 'else',
+        'else', 'elseif', 'empty',
     ],
 
 ];

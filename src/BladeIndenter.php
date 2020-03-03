@@ -146,7 +146,7 @@ class BladeIndenter
 
 
     /**
-     * Set else directives.
+     * Set "else" directives.
      *
      * @param  array  $directives
      *
@@ -160,7 +160,7 @@ class BladeIndenter
 
 
     /**
-     * Add else directives.
+     * Add "else" directives.
      *
      * @param  array  $directives
      *
@@ -192,7 +192,7 @@ class BladeIndenter
             ->map(function ($line, $num) {
                 $this->line = $num;
                 $indent = $this->indentLine($line);
-                return str_repeat(' ', $indent * 4) . $line;
+                return str_repeat(' ', $indent * (int)config('blade-indenter.indent_size', 4)) . $line;
             })
             ->implode("\n");
     }
@@ -288,7 +288,7 @@ class BladeIndenter
      */
     protected function elseDirective($directive)
     {
-        return (preg_match('/^else/', $directive) || in_array($directive, self::$else_directives));
+        return in_array($directive, self::$else_directives);
     }
 
 
