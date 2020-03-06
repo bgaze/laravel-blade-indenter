@@ -130,12 +130,14 @@ As an exemple, here is the way to configure indenter for [bgaze/bootstrap-form](
 // From boot method of App\Providers\AppServiceProvider:
 
 resolve(BladeIndenter::class)
+    // @close directive closes @open, @vertical, @horizontal and @inline directives
     ->addClosingDirectives([
         'open' => 'close',
         'vertical' => 'close',
         'horizontal' => 'close',
         'inline' => 'close',
     ])
+    // Indent level won't change on line after one of these directives 
     ->addSelfClosingDirectives([
         'text', 'email', 'url', 'tel', 'number', 'date', 'time', 'textarea',
         'password', 'file', 'hidden', 'select', 'range', 'checkbox', 'checkboxes',
