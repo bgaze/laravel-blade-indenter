@@ -7,79 +7,13 @@ It expects a valid and well formed code, and won't deal well with instructions o
 
 Any contribution or feedback is highly welcomed, please feel free to create a pull request or [submit a new issue](https://github.com/bgaze/laravel-blade-indenter/issues/new).
 
+<p>
+    <img src="./readme.png" alt="Basic indenter for Laravel 5.8+ Blade templates"/>
+</p>
+
 ## Documentation
 
 Full documentation is available at [https://packages.bgaze.fr/laravel-blade-indenter](https://packages.bgaze.fr/laravel-blade-indenter)
-
-## Example
-
-**Input:**
-
-```html
-@extends('layout')
-
-@section('title', $title)
-
-@section('content')
-<h1>
-@if($article->exists)
-Edit Article #{{ $article->id }}
-@php($url = route('articles.update', $article->id))
-@else
-Create a new Article
-@php($url = route('articles.store'))
-@endif
-</h1>
-
-{!! Form::model($article, ['url' => $url]) !!}
-
-<div id='title-group'>
-{!! Form::label('title', 'Title') !!}
-{!! Form::text('title') !!}
-@error('title')
-<p>{{ $message }}</p>
-@enderror
-</div>
-
-{!! Form::submit('Save') !!}
-
-{!! Form::close() !!}
-@endsection
-```
-
-**Output:**
-
-```html
-@extends('layout')
-
-@section('title', $title)
-
-@section('content')
-    <h1>
-        @if($article->exists)
-            Edit Article #{{ $article->id }}
-            @php($url = route('articles.update', $article->id))
-        @else
-            Create a new Article
-            @php($url = route('articles.store'))
-        @endif
-    </h1>
-    
-    {!! Form::model($article, ['url' => $url]) !!}
-    
-    <div id='title-group'>
-        {!! Form::label('title', 'Title') !!}
-        {!! Form::text('title') !!}
-        @error('title')
-            <p>{{ $message }}</p>
-        @enderror
-    </div>
-    
-    {!! Form::submit('Save') !!}
-    
-    {!! Form::close() !!}
-@endsection
-```
 
 ## Quick start
 
